@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SriVidya Jnana Peetam - KYC Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f5ef;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #5a2a27;
+    }
+
+    form {
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="email"], input[type="date"], select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .section {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #e0dcd5;
+    }
+
+    .submit-btn {
+      background-color: #5a2a27;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: 30px auto 0;
+    }
+
+    .submit-btn:hover {
+      background-color: #7a3a35;
+    }
+  </style>
+</head>
+<body>
+  <h1>SriVidya Jnana Peetam</h1>
+  <h2>KYC Form for Followers and Students</h2>
+
+  <form id="kycForm">
+    <!-- Section 1: Basic Personal Information -->
+    <div class="section">
+      <label>First Name</label>
+      <input type="text" name="firstName" required />
+
+      <label>Last Name</label>
+      <input type="text" name="lastName" required />
+
+      <label>Date of Birth</label>
+      <input type="text" name="dob" placeholder="DD/MM/YYYY" required />
+
+      <label>Gender</label>
+      <select name="gender">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+        <option>Prefer not to say</option>
+      </select>
+
+      <label>Nationality</label>
+      <input type="text" name="nationality" required />
+
+      <label>State</label>
+      <input type="text" name="state" required />
+
+      <label>City</label>
+      <input type="text" name="city" required />
+    </div>
+
+    <!-- Section 2: Contact Information -->
+    <div class="section">
+      <label>Mobile Number</label>
+      <input type="text" name="mobile" required />
+
+      <label>WhatsApp Enabled</label>
+      <select name="whatsapp">
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label>Alternate Mobile Number</label>
+      <input type="text" name="altMobile" />
+
+      <label>Email Address</label>
+      <input type="email" name="email" required />
+
+      <label>Full Residential Address</label>
+      <textarea name="address"></textarea>
+    </div>
+
+    <!-- Section 3: Spiritual Affiliation -->
+    <div class="section">
+      <label>How long associated?</label>
+      <select name="spiritualDuration">
+        <option>Less than a year</option>
+        <option>1-3 years</option>
+        <option>3+ years</option>
+      </select>
+
+      <label>How did you hear about us?</label>
+      <select name="discoverySource">
+        <option>Friend</option>
+        <option>Social Media</option>
+        <option>Event</option>
+        <option>Website</option>
+        <option>Other</option>
+      </select>
+
+      <label>Attended Programs?</label>
+      <select name="attendedPrograms">
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label>Program Details (if any)</label>
+      <textarea name="attendedDetails"></textarea>
+
+      <label>Areas of Special Interest</label>
+      <textarea name="interests"></textarea>
+    </div>
+
+    <!-- Section 4: Professional Background -->
+    <div class="section">
+      <label>Education</label>
+      <input type="text" name="education" />
+
+      <label>Occupation</label>
+      <input type="text" name="occupation" />
+
+      <label>Occupation Details</label>
+      <textarea name="occupationDetails"></textarea>
+    </div>
+
+    <!-- Section 5: Volunteer Registration -->
+    <div class="section">
+      <label>Register as a volunteer?</label>
+      <select name="volunteerInterest">
+        <option>Yes</option>
+        <option>No</option>
+        <option>Maybe</option>
+      </select>
+
+      <label>Why do you wish to volunteer?</label>
+      <textarea name="volunteerReason"></textarea>
+
+      <label>Availability</label>
+      <select name="availability">
+        <option>In-Person</option>
+        <option>Online</option>
+        <option>Hybrid</option>
+      </select>
+
+      <label>Time Commitment</label>
+      <select name="availabilityTime">
+        <option>Occasionally</option>
+        <option>Regularly</option>
+        <option>Full-time</option>
+      </select>
+
+      <label>Preferred Days/Time</label>
+      <input type="text" name="preferredDays" />
+
+      <label>Preferred Area of Volunteering</label>
+      <textarea name="volunteerAreas"></textarea>
+    </div>
+
+    <!-- Section 6: Communication Preferences -->
+    <div class="section">
+      <label>Preferred Language</label>
+      <input type="text" name="language" />
+
+      <label>Preferred Communication Channels</label>
+      <textarea name="channel"></textarea>
+    </div>
+
+    <!-- Section 7: Consent -->
+    <div class="section">
+      <label><input type="checkbox" name="consentWhatsApp" value="Yes" /> I consent to receiving messages via WhatsApp</label>
+      <label><input type="checkbox" name="consentEmail" value="Yes" /> I consent to receiving emails/newsletters</label>
+      <label><input type="checkbox" name="consentAnalytics" value="Yes" /> I consent to internal analytics</label>
+
+      <label>Signature</label>
+      <input type="text" name="signature" />
+
+      <label>Date</label>
+      <input type="text" name="date" />
+
+      <label><input type="checkbox" name="dataAgreement" value="Yes" required /> I have read and agree to the Data Usage Policy</label>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('kycForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => {
+        if (data[key]) {
+          data[key] += ", " + value;
+        } else {
+          data[key] = value;
+        }
+      });
+
+      try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbyQYLtSuPChkC0ji2aARehfMovE_Ro34gCtYcshJShIQ4QD4gKAqJBZY16Oaiglw-_U/exec", {
+          method: "POST",
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          alert("Form submitted successfully!");
+          document.getElementById("kycForm").reset();
+        } else {
+          alert("Submission failed. Try again.");
+        }
+      } catch (err) {
+        alert("Error submitting form. Check your connection.");
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
