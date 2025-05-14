@@ -236,31 +236,35 @@
   </div>
 
   <script>
-    document.getElementById("kycForm").addEventListener("submit", function(e) {
+    document.getElementById('kycForm').addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const form = e.target;
-      const data = new FormData(form);
-      const object = {};
-      data.forEach((value, key) => {
-        object[key] = value;
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => {
+        if (data[key]) {
+          data[key] += ", " + value;
+        } else {
+          data[key] = value;
+        }
       });
 
-      fetch("https://script.google.com/macros/s/AKfycbyQYLtSuPChkC0ji2aARehfMovE_Ro34gCtYcshJShIQ4QD4gKAqJBZY16Oaiglw-_U/exec", {
-        method: "POST",
-        body: JSON.stringify(object),
-        headers: {
-          "Content-Type": "application/json"
+      try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbyQYLtSuPChkC0ji2aARehfMovE_Ro34gCtYcshJShIQ4QD4gKAqJBZY16Oaiglw-_U/exec", {
+          method: "POST",
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          alert("Form submitted successfully!");
+          document.getElementById("kycForm").reset();
+        } else {
+          alert("Submission failed. Try again.");
         }
-      })
-      .then(res => res.text())
-      .then(text => {
-        document.getElementById("response").textContent = "Form submitted successfully!";
-        form.reset();
-      })
-      .catch(err => {
-        document.getElementById("response").textContent = "Error submitting form."; 
-      });  
+      } catch (err) {
+        alert("Error submitting form. Check your connection.");
+        console.error(err);
+      }
     });
   </script>
 </body>
